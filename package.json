@@ -1,0 +1,27 @@
+{
+  "name": "boilerplate-electron-material-ui-react",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "material-ui": "^1.0.0-beta.10",
+    "material-ui-icons": "^1.0.0-alpha.19",
+    "rc-slider": "^8.5.0",
+    "rc-tooltip": "^3.7.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
+    "react-scripts": "1.0.14",
+    "react-tap-event-plugin": "^3.0.2",
+    "youtube-search-google-api": "^0.6.0"
+  },
+  "devDependencies": {
+    "electron": "^1.7.6"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "electron": "electron ."
+  },
+  "main": "src/electron-starter.js"
+}

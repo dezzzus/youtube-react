@@ -1,0 +1,132 @@
+body{
+    background: #F9F9F9;
+    font-size:15px;
+    color:#333;
+}
+form{margin:0;}
+
+a{color: #167ac6;text-decoration: none;}
+h1.title{
+    text-align: center;
+    margin:20px 0 0;
+
+}
+
+.form,.info-block, .results, .load-more{
+    width: 700px;
+    margin:0 auto;
+    box-sizing: border-box;
+}
+
+.form{
+    line-height: 28px;
+    margin-top:10px;
+
+    background:#F0F0F0;
+    padding:20px 15px;
+    width:700px;
+}
+
+.form .label{
+    width:120px;
+    text-align: right;
+    display: inline-block;
+}
+.form .query{
+    margin-bottom:25px;
+}
+.form .query input{
+    width:calc(100% - 100px);
+    padding:10px;
+    display:inline-block;
+    border:1px solid #AAA;
+    font-size:14px;
+}
+
+
+.form .query .search{
+    display:block;
+    float:right;
+    background: white;
+    border:1px solid #AAA;
+    color:#666;
+    font-size:14px;
+    padding:10px 0;
+    border-left:0;
+    width:100px;
+    outline:0;
+}
+
+
+.form .block{
+    width:50%;
+    float:left;
+    text-align: center;
+}
+.form:after{
+    content:'';
+    clear:both;
+    display: block;
+}
+
+
+.form .block .filter input{
+    padding:2px;
+    text-align:center;
+    width:70px;
+}
+.form .block .filter span{
+    display:inline-block;
+    width:100px;
+}
+.form .block .filter.duration input{
+
+}
+
+.form .block .rating{
+    margin-top:10px;
+}
+.form .block .rating input{
+    width:245px;
+}
+
+.info-block{
+    text-align: center;
+    padding:10px;
+    border:1px dashed #aaa;
+    background:white;
+    margin:10px auto;
+}
+
+.load-more{
+    margin:10px auto;
+    display: block;
+
+    background: white;
+    border:1px solid #AAA;
+    color:#666;
+    font-size:14px;
+    height:30px;
+    outline:0;
+
+    word-break: break-all;
+}
+.results{
+    margin:20px auto;
+}
+.results .info{ color:#999;}
+.results .item{
+    padding:5px 0;
+}
+.results .item:nth-child(even){
+    background: #F0F0F0;
+}
+.results .item:after{
+    content:'';
+    display: block;
+    clear: both;
+}
+.results .item .thumb{
+    float: left;
+    margin-right: 10px;
+}
