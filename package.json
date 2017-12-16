@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "google-client-api": "^1.0.4",
+    "googleapis": "^23.0.0",
+    "jquery": "^3.2.1",
+    "jquery-ui": "^1.12.1",
     "material-ui": "^1.0.0-beta.10",
     "material-ui-icons": "^1.0.0-alpha.19",
     "rc-slider": "^8.5.0",

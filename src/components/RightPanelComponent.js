@@ -37,8 +37,21 @@ class RightPanel extends React.Component {
   render() {
     const { classes, results } = this.props;
 
+    console.log (results);
     return (
-      <div>Result items here</div>
+      <div>
+        <div>Result items here</div>
+        {results.map((item,index) => (
+          <div key={item.id.videoId}>
+            <a href="https://www.youtube.com/watch?v={item.id.videoId}" ng-click="openVideo(item)" target="_blank" className="thumb">
+              <img ng-src="{{item.snippet.thumbnails.default.url}}"/>
+            </a>
+            <a href="https://www.youtube.com/watch?v={item.id.videoId}" ng-click="openVideo(item)" target="_blank" className="title">{item.snippet.title}</a>
+            <div className="info">{item.date} &nbsp;|&nbsp; {item.stats.viewCount} views &nbsp;|&nbsp; Rating {item.stats.rating}%</div>
+            <div className="desc">{item.snippet.description}</div>
+          </div>
+          ))}
+      </div>
     );
   }
 }

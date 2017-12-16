@@ -7,6 +7,7 @@ import Slider from 'rc-slider';
 import Tooltip from 'rc-tooltip';
 import 'rc-slider/assets/index.css';
 import 'rc-tooltip/assets/bootstrap.css';
+import $ from 'jquery';
 
 const createSliderWithTooltip = Slider.createSliderWithTooltip;
 const Range = createSliderWithTooltip(Slider.Range);
@@ -85,6 +86,14 @@ class LeftPanel extends React.Component {
     this.setState({rating: value});
   }
 
+  updateFilter = () => {
+    let filter = {}
+    filter.query = $('#search_query').val();
+    console.log (filter);
+    console.log (this);
+    this.props.onSearchTermChange(filter);
+  }
+
   render() {
     const { classes } = this.props;
 
@@ -100,7 +109,7 @@ class LeftPanel extends React.Component {
           placeholder="Search Query"
           margin="normal"
         />
-        <Button raised className={classes.button}>
+        <Button raised className={classes.button} onClick={this.updateFilter}>
           Search
         </Button>
         <div className={classes.toolbar}>
