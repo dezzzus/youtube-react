@@ -85,12 +85,25 @@ class LeftPanel extends React.Component {
   handleSlider = (value) => {
     this.setState({rating: value});
   }
+  handleQuery = (value) => {
+    if (value.charCode == 13) {
+      this.updateFilter();
+    }
+  }
 
   updateFilter = () => {
     let filter = {}
     filter.query = $('#search_query').val();
-    console.log (filter);
-    console.log (this);
+    filter.views_min = $('#min_views').val();
+    filter.views_max = $('#max_views').val();
+    filter.comments_min = $('#min_comments').val();
+    filter.comments_max = $('#max_comments').val();
+    filter.duration_min = $('#min_durations').val();
+    filter.duration_max = $('#max_durations').val();
+    filter.rating = this.state.rating;
+    filter.date_min = $('#min-date').val();
+    filter.date_max = $('#max-date').val();
+
     this.props.onSearchTermChange(filter);
   }
 
@@ -108,6 +121,7 @@ class LeftPanel extends React.Component {
           }}
           placeholder="Search Query"
           margin="normal"
+          onKeyPress={this.handleQuery}
         />
         <Button raised className={classes.button} onClick={this.updateFilter}>
           Search
@@ -135,7 +149,7 @@ class LeftPanel extends React.Component {
             <div className={classes.labeldiv}>
               Min. rating({this.state.rating})
             </div>
-            <Slider className={classes.rating} min={1} step={1} max={100} onChange={this.handleSlider} handle={handle} />
+            <Slider className={classes.rating} id="rating" min={1} step={1} max={100} onChange={this.handleSlider} handle={handle} />
           </div>
         </div>
       </form>

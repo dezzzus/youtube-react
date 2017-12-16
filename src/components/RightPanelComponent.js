@@ -18,7 +18,20 @@ const styles = theme => ({
   },
   button: {
     margin: theme.spacing.unit,
+    width: '100%',
   },
+  thumb: {
+    display: 'inline-block',
+    width: '120px'
+  },
+  videoinfo: {
+    display: 'inline-block',
+    width: 'calc(100% - 120px)',
+    verticalAlign: 'top',
+  },
+  info: {
+    color: 'grey',
+  }
 });
 
 class RightPanel extends React.Component {
@@ -43,14 +56,21 @@ class RightPanel extends React.Component {
         <div>Result items here</div>
         {results.map((item,index) => (
           <div key={item.id.videoId}>
-            <a href="https://www.youtube.com/watch?v={item.id.videoId}" ng-click="openVideo(item)" target="_blank" className="thumb">
-              <img ng-src="{{item.snippet.thumbnails.default.url}}"/>
+            <a href={"https://www.youtube.com/watch?v="+item.id.videoId} ng-click="openVideo(item)" target="_blank" className={classes.thumb}>
+              <img src={item.snippet.thumbnails.default.url}/>
             </a>
-            <a href="https://www.youtube.com/watch?v={item.id.videoId}" ng-click="openVideo(item)" target="_blank" className="title">{item.snippet.title}</a>
-            <div className="info">{item.date} &nbsp;|&nbsp; {item.stats.viewCount} views &nbsp;|&nbsp; Rating {item.stats.rating}%</div>
-            <div className="desc">{item.snippet.description}</div>
+            <div className={classes.videoinfo}>
+              <a href={"https://www.youtube.com/watch?v="+item.id.videoId} ng-click="openVideo(item)" target="_blank" className={classes.title}>{item.snippet.title}</a>
+              <div className={classes.info}>{item.date} &nbsp;|&nbsp; {item.stats.viewCount} views &nbsp;|&nbsp; Rating {item.stats.rating}%</div>
+              <div className={classes.desc}>{item.snippet.description}</div>
+            </div>
           </div>
           ))}
+        { this.props.nexttoken ?
+          <Button raised className={classes.button} onClick={this.props.loadmore}>Load Next Page</Button>
+          :
+          <div></div>
+        }
       </div>
     );
   }
