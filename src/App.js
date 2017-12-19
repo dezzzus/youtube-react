@@ -299,9 +299,7 @@ class App extends Component {
           } else {
             //$scope.info = 'Results were filtered out by the script. Try to load more.'
           }
-          let state = that.state;
-          state.results = [];
-          that.setState(state);
+
         } else {
           let state = that.state;
           state.results = state.results.concat(results);
